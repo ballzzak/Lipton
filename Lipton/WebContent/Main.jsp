@@ -3,12 +3,14 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Lipton - 로그인 또는 가입</title>
 <%
+//11111111
 	if (session.getAttribute("name") != null) {
 %>
 		<script>
