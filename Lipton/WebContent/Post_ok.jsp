@@ -10,7 +10,7 @@
 	request.setCharacterEncoding("UTF-8");
 	String idx = (String)session.getAttribute("useridx");
 	String name = (String)session.getAttribute("name");
-	String content = request.getParameter("post");
+	String content = request.getParameter("post").replaceAll("\r\n", "<br>");
 	
 	LiptonDB board = new LiptonDB("board");
 	board.insert(String.format("{useridx : %s, name : '%s', content : '%s', hit : 0}", idx, name, content));
