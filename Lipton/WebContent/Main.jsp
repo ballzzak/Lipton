@@ -29,6 +29,7 @@
 	}
 	if (name.equals("")) {
 %>
+
 		<header>
 			<a href="Main.jsp" id="logo">Lipton</a>
 			<form name="LoginForm" id="loginform" method="post" action="Login_ok.jsp">
@@ -41,13 +42,13 @@
 					<label for="pw">비밀번호</label>
 					<div>
 						<input type="password" id="pw" name="pw" maxlength="20">
-						<input type="button" value="로그인" onclick="sendit1()" style="vertical-align:bottom;margin-left:8px">
+						<input type="button" value="로그인" onclick="sendit1()" style="font-weight:bolder;margin-left:8px;border-radius:2px;background-color:#039e69;border:1px solid black;color:white;">
 					</div>
 					<div><a href="#">계정을 잊으셨나요?</a></div>
 				</div>
 			</form>
 		</header>
-		<div id="registdiv">
+		<div id="registdiv" style="padding-top: 150px;">
 			<div>
 				<h1>가입하기</h1>
 				<p>빠르고 쉽습니다.</p>
@@ -62,7 +63,7 @@
 						<input type="radio" name="gender" value="여성" checked>여성
 						<input type="radio" name="gender" value="남성">남성
 					</div>
-					<input type="button" value="가입하기" onclick="sendit2()" style="width:200px;height:40px;">
+					<input type="button" value="가입하기" onclick="sendit2()" style="background-color: #f4b183;width:250px;height:40px;border:none;color:white;border-radius:2px; height: 50px;">
 				</form>
 			</div>
 		</div>
@@ -71,7 +72,7 @@
 		LiptonDB board = new LiptonDB("board");
 		ArrayList<DBObject> postInfo = board.find();
 %>
-		<header>
+		<header id="bar">
 			<a href="Main.jsp" id="logo">Lipton</a>
 			<div style="float:right;margin:5px 10px 0 0">
 				<p style="margin:0 0 10px 0;text-align:right"><button id="v" onclick="v()"><%=name%></button></p>
@@ -82,13 +83,18 @@
 				</div>
 			</div>
 		</header>
-		<div style="padding-top:30px">
+		<div style="padding-top:100px">
 			<div id="boarddiv">
-				<h1 style="margin-top:0">글쓰기</h1>
-				<form name="postForm" method="post" action="Post_ok.jsp" style="margin-bottom: 30px">
-					<textarea name="post"></textarea>
-					<input type="button" value="등록" style="width:18%;height:30px;float:right" onclick="sendit3()">
+				<h1 style="margin-top:0"></h1>
+				<form name="postForm" method="post" action="Post_ok.jsp" style="margin-bottom: 30px;">
+					<textarea name="post" placeholder="<%=name%>님, 게시글을 올려보세요" style="height:150px;"></textarea>
+					<input type="button" value="게시하기" style="font-size:20px;color: white;width:18%;height:150px;float:right;border:none;border-radius:2px;background-color: #c5e0b4;" onclick="sendit3()">
 				</form>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div style="background-color:white; ">
+			
 			</div>
 		</div>
 		<script>var sw = true</script>
@@ -107,7 +113,7 @@
 				n.innerText = "<%=postInfo.get(i).get("name")%>"
 				hit.innerText = "<%=(int)Double.parseDouble(postInfo.get(i).get("hit").toString())%>"
 				date.innerText = '<%=postInfo.get(i).get("registdate")%>'
-				cont.innerText = "<%=postInfo.get(i).get("content")%>"
+				cont.innerHTML = "<%=postInfo.get(i).get("content")%>"
 				
 				header.appendChild(n)
 				header.appendChild(hit)
@@ -124,10 +130,10 @@
 				cont.setAttribute("href","Post.jsp?idx=<%=postInfo.get(i).get("_id").toString()%>")
 				
 				if (sw) {
-					wrapper.setAttribute("style","background-color:#ddd;padding:3px 10px")
+					wrapper.setAttribute("style","background-color:white;padding:3px 10px; margin-top:10px; border-radius:5px;height:200px;border: 1px solid #f4b183;")
 					sw = false
 				} else {
-					wrapper.setAttribute("style","background-color:#eee;padding:3px 10px")
+					wrapper.setAttribute("style","background-color:white;padding:3px 10px; margin-top:10px; border-radius:5px;height:200px;border: 1px solid #f4b183;")
 					sw = true
 				}
 				

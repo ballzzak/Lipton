@@ -50,7 +50,7 @@
 			</div>
 		</div>
 	</header>
-	<div id="modifydiv">
+	<div id="modifydiv" style="padding-top:150px;">
 		<div>
 			<h1>정보 수정</h1>
 			<form name="modForm" method="post" action="Modify_ok.jsp" enctype="Multipart/form-data">

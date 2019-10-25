@@ -31,7 +31,7 @@
 	<header>
 		<a href="Main.jsp" id="logo">Lipton</a>
 		<div style="float:right;margin:5px 10px 0 0">
-			<p style="margin:0 0 10px 0;text-align:right"><button id="v" onclick="v()"><%=name%></button></p>
+			<p style="margin:0 0 10px 0;text-align:right;font-size:20px;"><button id="v" onclick="v()"><%=name%></button></p>
 			<div style="display:none" id="infodiv">
 				<a href="Logout.jsp">[로그아웃]</a> |
 				<a href="Modify.jsp">[회원정보 수정]</a> |
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 	</header>
-	<div style="padding-top:30px">
+	<div style="padding-top:100px">
 		<div id="postdiv" style="width:50%;margin:0 auto;background-color:#eee;padding:10px">
 			<div>
 				<h2 style="display:inline-block;margin:0"><%=postInfo.get("name").toString()%></h2>
@@ -72,7 +72,7 @@
 	</div>
 	<form name="replyForm" method="post" action="Reply_ok.jsp" style="width:50%;height:24px;margin:5px auto 10px auto">
 		<input type="hidden" name="postidx" value="<%=idx%>">
-		<input type="text" name="reply" style="width:80%;height:24px;">
+		<input type="text" name="reply" placeholder="댓글을 달아보세요..." style="width:80%;height:24px;border-radius:2px;">
 		<input type="button" value="댓글달기" style="width:18%;float:right" onclick="sendit()">
 	</form>
 </body>
@@ -135,10 +135,10 @@
 			}
 
 			if (sw) {
-				wrapper.setAttribute("style","background-color:#ddd;padding:3px 10px")
+				wrapper.setAttribute("style","background-color:white;padding:3px 10px; margin-top:10px; border-radius:5px;height:200px;border: 1px solid #f4b183;")
 				sw = false
 			} else {
-				wrapper.setAttribute("style","background-color:#eee;padding:3px 10px")
+				wrapper.setAttribute("style","background-color:white;padding:3px 10px; margin-top:10px; border-radius:5px;height:200px;border: 1px solid #f4b183;")
 				sw = true
 			}
 			
