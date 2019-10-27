@@ -7,7 +7,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: whitesmoke;
+    background-color: #ebedf0;
 }
 header {
     background-color: #f4b183;
@@ -17,6 +17,13 @@ header {
     border-bottom-radius:2px;
     position: fixed;
     top:0px;
+}
+#footerdiv{
+	background-color:white;
+	padding:20px;
+	text-align:center;
+	color: black;
+	margin-top: 100px;
 }
 #logo {
     display: inline-block;
@@ -37,6 +44,13 @@ header {
 }
 #id, #pw {
     height: 24px;
+}
+#leftsidebartitle{
+	background-color: orange; 
+	color:white; 
+	border:none; 
+	border-radius:2px;
+	margin-top:0;
 }
 .logindiv {
     display: inline-block;
@@ -70,6 +84,17 @@ header {
 }
 #v:focus {
 	outline: none;
+}
+#leftsidebar {
+	background-color:whitesmoke; 
+	width:20%; 
+	height:100%; 
+	color:blue; 
+	top:200px; 
+	position:fixed;
+	border-right:1px solid grey; 
+	border-radius:2px;
+	margin-left:90px;
 }
 #boarddiv {
 	width: 35%;

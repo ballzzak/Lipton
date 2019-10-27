@@ -67,6 +67,12 @@
 				</form>
 			</div>
 		</div>
+		<div id="footerdiv">
+			<h3>Lipton.com</h3>
+			<h5>team: 곽종헌, 박찬주, 박혜원, 서재성, 이상헌, 조준형</h5>
+			<h5>Group: 3조</h5>
+			<h5>Call: Lipton@gmail.com</h5>
+		</div>
 <%
 	} else {
 		LiptonDB board = new LiptonDB("board");
@@ -80,6 +86,7 @@
 					<a href="Logout.jsp">[로그아웃]</a> |
 					<a href="Modify.jsp">[회원정보 수정]</a> |
 					<a href="Leave.jsp">[회원 탈퇴]</a>
+					<a href="myPage/myPage.jsp">[마이페이지]</a>
 				</div>
 			</div>
 		</header>
@@ -92,9 +99,40 @@
 				</form>
 			</div>
 		</div>
-		<div id="sidebar">
-			<div style="background-color:white; ">
-			
+		<div>
+			<div id="leftsidebar" style="background-color:#ebedf0; 
+	width:20%; 
+	height:750px; 
+	color:blue; 
+	top:100px; 
+	position:fixed;
+	border-right:1px solid grey; 
+	border-radius:2px;
+	margin-left:0;">
+	<div id="leftsidebartitle">
+			<p>카테고리 및 친구 리스트</p>
+		</div>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+				<h4>SideBar</h4>
+			</div>
+		</div>
+		<div>
+			<div id="rightsidebar" style="float:right;margin-left:70%;background-color:white; width:25%; height:400px; margin-right:30px; color:blue;top:150px; position:fixed;">
+				<p>광고</p>
 			</div>
 		</div>
 		<script>var sw = true</script>
