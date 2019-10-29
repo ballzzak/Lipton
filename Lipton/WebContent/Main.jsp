@@ -80,6 +80,8 @@
 %>
 		<header id="bar">
 			<a href="Main.jsp" id="logo">Lipton</a>
+			<div style="float:left;margin-left:400px;margin-top:20px;"><input type="text" placeholder="검색해보기..." style="width:350px;border:none; border-radius:2px; height:30px;"></div>
+			<div style="float:left;margin-top:20px;"><input type="button" value="검색" style="border:none; border-radius:2px; width:50px;height:30px;background-color:orange;"></div>
 			<div style="float:right;margin:5px 10px 0 0">
 				<p style="margin:0 0 10px 0;text-align:right"><button id="v" onclick="v()"><%=name%></button></p>
 				<div style="display:none" id="infodiv">
@@ -94,23 +96,29 @@
 			<div id="boarddiv">
 				<h1 style="margin-top:0"></h1>
 				<form name="postForm" method="post" action="Post_ok.jsp" style="margin-bottom: 30px;">
-					<textarea name="post" placeholder="<%=name%>님, 게시글을 올려보세요" style="height:150px;"></textarea>
-					<input type="button" value="게시하기" style="font-size:20px;color: white;width:18%;height:150px;float:right;border:none;border-radius:2px;background-color: #c5e0b4;" onclick="sendit3()">
+				<div style="border:1px solid orange;border-radius:2px;">
+				<p style="height:100%; margin:0;background-color:orange; width:100%; color:white;padding:8px;">
+					게시물 만들기
+				</p>
+					<textarea name="post" placeholder="<%=name%>님, 게시글을 올려보세요" style="height:150px;border:none;"></textarea>
+					<input type="button" value="게시하기" style="font-size:20px;color: white;width:100%;height:50px;border:none;border-radius:2px;background-color: #c5e0b4;" onclick="sendit3()">
+				</div>
 				</form>
 			</div>
 		</div>
 		<div>
-			<div id="leftsidebar" style="background-color:#ebedf0; 
+			<div id="leftsidebar" style="background-color:#fdeada; 
 	width:20%; 
 	height:750px; 
 	color:blue; 
-	top:100px; 
+	top:122px; 
 	position:fixed;
 	border-right:1px solid grey; 
 	border-radius:2px;
-	margin-left:0;">
+	margin-left:100px;
+	text-align:center;">
 	<div id="leftsidebartitle">
-			<p>카테고리 및 친구 리스트</p>
+			<p style="height:100%; margin:0;background-color:orange; width:100%; color:white;padding:8px; text-align:center;">카테고리 및 친구 리스트</p>
 		</div>
 				<h4>SideBar</h4>
 				<h4>SideBar</h4>
@@ -131,8 +139,11 @@
 			</div>
 		</div>
 		<div>
-			<div id="rightsidebar" style="float:right;margin-left:70%;background-color:white; width:25%; height:400px; margin-right:30px; color:blue;top:150px; position:fixed;">
-				<p>광고</p>
+			<div id="rightsidebar" style="float:right;margin-left:75%;background-color:white; width:20%; height:400px; margin-right:10%; color:blue;top:122px; position:fixed;">
+				<p style="height:20%; margin:0;background-color:orange; width:100%; color:white;padding:8px;">광고</p>
+				<div style="background-color:white; height:80%;">
+					광고 내용
+				</div>
 			</div>
 		</div>
 		<script>var sw = true</script>

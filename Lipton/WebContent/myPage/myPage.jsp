@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>프로필</title>
-    	<link src="./CSS/mypage.css" rel="stylesheet" type="text/css">
+    	<link href="../CSS/mypage.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
