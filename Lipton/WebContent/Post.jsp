@@ -5,8 +5,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
+	request.setCharacterEncoding("UTF-8");
 	String name = (String)session.getAttribute("name");
 	String idx = request.getParameter("idx");
+	String useridx = (String)session.getAttribute("useridx");
+	useridx = useridx.split("\\'")[1];
 	
 	LiptonDB board = new LiptonDB("board");
 	DBObject postInfo = board.find(String.format("{_id : %s}", "ObjectId('" + idx + "')")).get(0);
@@ -47,6 +50,30 @@
 			</div>
 			<p style="margin:0"><%=postInfo.get("registdate").toString()%></p>
 			<p><%=postInfo.get("content").toString()%></p>
+			<%
+			try {
+				String postidx = "ObjectId('" + request.getParameter("idx") + "')";
+				LiptonDB postlike = new LiptonDB("postlike");
+				ArrayList<DBObject> post = postlike.find("{postidx : " + postidx + "}");
+				ArrayList<Object> tmp = (ArrayList<Object>)post.get(0).get("useridxs");
+				ArrayList<String> likeList = new ArrayList<>();
+				for (Object i : tmp) likeList.add(i.toString());
+				
+				if (likeList.contains(useridx)) {
+%>
+					<button id="likebtn" onclick="like('<%=idx%>')" style="margin-right:10px;background-color:#FF9900">좋아요 <%=likeList.size()%></button>
+<%
+				} else {
+%>
+					<button id="likebtn" onclick="like('<%=idx%>')" style="margin-right:10px">좋아요 <%=likeList.size()%></button>
+<%
+				}
+			} catch (Exception e) {
+%>
+				<button id="likebtn" onclick="like('<%=idx%>')" style="margin-right:10px">좋아요 0</button>
+<%
+			}
+%>
 			<script>
 				if ("<%="ObjectId('" + postInfo.get("useridx").toString() + "')"%>" == "<%=(String)session.getAttribute("useridx")%>") {
 					var delpostbtn = document.createElement("button")

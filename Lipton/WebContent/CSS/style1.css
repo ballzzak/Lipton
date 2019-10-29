@@ -7,16 +7,23 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: whitesmoke;
+    background-color: #fdeada;
 }
 header {
     background-color: #f4b183;
     padding: 5px 5px 10px 5px;
-    height: 85px;
+    height: 75px;
     width: 100%;
     border-bottom-radius:2px;
     position: fixed;
     top:0px;
+}
+#footerdiv{
+	background-color:white;
+	padding:20px;
+	text-align:center;
+	color: black;
+	margin-top: 100px;
 }
 #logo {
     display: inline-block;
@@ -27,6 +34,7 @@ header {
     text-decoration-line: none;
     font-size: 35px;
     font-weight: bold;
+    float: left;
     border-bottom : 5px solid #c5e0b4;
 }
 #loginform {
@@ -37,6 +45,13 @@ header {
 }
 #id, #pw {
     height: 24px;
+}
+#leftsidebartitle{
+	background-color: orange; 
+	color:white; 
+	border:none; 
+	border-radius:2px;
+	margin-top:0;
 }
 .logindiv {
     display: inline-block;
@@ -71,16 +86,27 @@ header {
 #v:focus {
 	outline: none;
 }
+#leftsidebar {
+	background-color:whitesmoke; 
+	width:20%; 
+	height:100%; 
+	color:blue; 
+	top:200px; 
+	position:fixed;
+	border-right:1px solid grey; 
+	border-radius:2px;
+	margin-left:90px;
+}
 #boarddiv {
-	width: 35%;
+	width: 38%;
 	margin: 0 auto;
 }
 #boarddiv  textarea {
-	width: 80%;
+	width: 100%;
 	height:50px;
 	resize:none;
 	vertical-align: bottom;
-	border-radius:5px;
+	border-radius:2px;
 }
 #file {
 	display: none;
